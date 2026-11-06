@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: transmind-db
+    environment:
+      POSTGRES_USER: transmind
+      POSTGRES_PASSWORD: transmind
+      POSTGRES_DB: transmind
+    ports:
+      - "5433:5432"
+    volumes:
+      - transmind_pgdata:/var/lib/postgresql/data
+volumes:
+  transmind_pgdata:
